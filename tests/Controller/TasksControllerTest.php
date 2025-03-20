@@ -13,7 +13,7 @@ final class TasksControllerTest extends WebTestCase
     private KernelBrowser $client;
     private EntityManagerInterface $manager;
     private static int $testId = 1;
-    private string  $path = '/tasks';
+    private string  $path = '/api/tasks';
 
     protected function setUp(): void
     {
@@ -31,7 +31,7 @@ final class TasksControllerTest extends WebTestCase
         $this->assertJson($content);
 
         // Test Parameters
-        $this->client->request('GET', '/tasks?page=2&limit=15&status=completed');
+        $this->client->request('GET', $this->path . '?page=2&limit=15&status=completed');
         $content = $this->client->getResponse()->getContent();
         $this->assertJson($content);
         // ... we could do more tests here... (ex. page or limit alone)

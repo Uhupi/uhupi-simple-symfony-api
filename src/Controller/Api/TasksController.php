@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
 use App\Entity\Tasks;
 use App\Repository\TasksRepository;
@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-#[Route('/tasks')]
+#[Route('/api/tasks')]
 final class TasksController extends AbstractController
 {
     const HTTP_MESSAGE_NOT_FOUND = 'Sorry, task not found :(';
